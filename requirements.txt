@@ -1,0 +1,6 @@
+pexpect
+psycopg2
+httplib2
+apiclient
+oauth2client
+gspread
