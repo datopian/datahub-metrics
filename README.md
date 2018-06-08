@@ -1,12 +1,24 @@
-# DataHub Metric
+# DataHub Metrics
+
+This repo automates daily, weekly and biweekly stats collection for datahub.io. Stats are collected from postgre sql database, metastore api sevice, google analytics and gitter. The script also uploads test csv files via [data-cli](https://github.com/datahq/data-cli) to measure data processing time on website on a daily basis
+
+Once collected the stats are inserted into a google spreadsheet. The stats collection is automated via Travis. There are three scripts that run automatically at specified times.
+* dailyStats.py runs every Tuesday, Wednesday, Thursday, Friday and Saturday at 00:05 UTC and collects daily stats for the previous day
+* weeklyStats.py runs every Monday at 00:05 UTC and collects stats for the previous week
+* biWeeklyStats.py runs every other Thursday at 00:05 UTC and collects stats for previous 14 days which is a duration of our sprint
 
 
-## What does it do?
+## Requirements
+Scripts are written for python 3.6+. Modules that are required:
+- pexpect
+- psycopg2
+- httplib2
+- apiclient
+- oauth2client
+- gspread
 
-The script:
-- fetches data about users and dataset from postgre sql database
-- fetches reports from the Google Analytics **(under development)**
-- fetches stats from NPM for `data-cli` package **(not sure I need this one)**
-- processes data and updates daily and weekly csv file **(under development)**
-- Appends data to google sheet **(under development)**
-- The script is automated by Travis **(under development)**
+To install requirements run `pip install -r requirements.txt`
+
+
+## License
+Public Domain Dedication and License (PDDL)
