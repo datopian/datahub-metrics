@@ -24,8 +24,8 @@ def getDailyStats(dailyStatsFieldsNameList):
     dailyStats['Number of pushes'] = psqlStats.getCountOfAllPushRequests(dailyStats['Date'])
     dailyStats['Number of pushes (excluding us)'] = psqlStats.getCountOfPushRequestsExcludingUs(dailyStats['Date'])
     timesOfProcessing = testFilesPushToDataHub.getTimesOfProcessing()
-    dailyStats['Speed of a 5kb of packaged dataset push (in seconds)'] = timesOfProcessing['5kb-test']
-    dailyStats['Speed of a 1Mb of packaged dataset push (in seconds)'] = timesOfProcessing['1mb-test']
+    dailyStats['Speed of a 5kb of packaged dataset push (in seconds)'] = 'test'  # timesOfProcessing['5kb-test']
+    dailyStats['Speed of a 1Mb of packaged dataset push (in seconds)'] = 'test'  # timesOfProcessing['1mb-test']
 
     dailyGoogleAnalyticsStats = googleAnalytics.getStats('daily', dailyStats['Date'])
     for field in dailyGoogleAnalyticsStats:
