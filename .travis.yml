@@ -9,5 +9,6 @@ before_install:
     - tar xvf secrets.tar
 install:
     - pip install -r requirements.txt
+    - npm install -g data-cli
 script:
     - python scripts/dailyStats.py
