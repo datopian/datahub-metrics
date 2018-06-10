@@ -1,4 +1,5 @@
 pexpect
+python-dotenv
 psycopg2
 httplib2
 apiclient
