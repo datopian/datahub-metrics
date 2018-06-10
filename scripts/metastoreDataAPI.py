@@ -23,5 +23,3 @@ def getSizeOfPublishedDatasets():
 
 
 textResponseJSON = getMetastoreDataJSON()
-print(getCountOfPublishedDatasets())
-print(getSizeOfPublishedDatasets())

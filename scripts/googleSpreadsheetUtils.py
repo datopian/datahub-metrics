@@ -16,7 +16,7 @@ def setUpStatsWorksheet(spreadsheetName, worksheetName, fieldNamesList):
 
 def openSpreadsheet(spreadsheetName):
     scope = ['https://spreadsheets.google.com/feeds']
-    jsonKeyFileNamePath = 'credentials/Gspread.json'
+    jsonKeyFileNamePath = 'Gspread.json'
     credentials = ServiceAccountCredentials.from_json_keyfile_name(
         jsonKeyFileNamePath, scope
     )

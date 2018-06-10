@@ -23,7 +23,7 @@ def getDailyStats(dailyStatsFieldsNameList):
     dailyStats['Unlisted datasets (extracting our datasets)'] = dailyStats['Unlisted datasets'] - psqlStats.getCountOfUnlistedDatasets()
     dailyStats['Number of pushes'] = psqlStats.getCountOfAllPushRequests(dailyStats['Date'])
     dailyStats['Number of pushes (excluding us)'] = psqlStats.getCountOfPushRequestsExcludingUs(dailyStats['Date'])
-    timesOfProcessing = {'5kb-test': 'test', '1mb-test': 'test'} #testFilesPushToDataHub.getTimesOfProcessing()
+    timesOfProcessing = testFilesPushToDataHub.getTimesOfProcessing()
     dailyStats['Speed of a 5kb of packaged dataset push (in seconds)'] = timesOfProcessing['5kb-test']
     dailyStats['Speed of a 1Mb of packaged dataset push (in seconds)'] = timesOfProcessing['1mb-test']
 
@@ -50,7 +50,8 @@ dailyStatsFieldsNameList = [
     'Site Traffic', 'Data stored (Published)', 'Data growth', 'Total number of data requests', 'Comment'
 ]
 dailyStatsWorksheet = googleSpreadsheetUtils.setUpStatsWorksheet(
-    spreadsheetName="Stats Test",  # "DataHub v3 Stats & Metrics",
+    # spreadsheetName="DataHub v3 Stats & Metrics",
+    spreadsheetName="Stats Test",
     worksheetName="Daily Stats",
     fieldNamesList=dailyStatsFieldsNameList
 )

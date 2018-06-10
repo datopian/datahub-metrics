@@ -2,7 +2,7 @@ import dotenv
 import os
 
 
-environmentParameters = dotenv.main.dotenv_values('credentials/.env')
+environmentParameters = dotenv.main.dotenv_values('.env')
 os.environ.update(environmentParameters)
 config = os.environ
 

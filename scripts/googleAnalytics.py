@@ -11,7 +11,7 @@ from oauth2client import tools
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 DISCOVERY_URI = ('https://analyticsreporting.googleapis.com/$discovery/rest')
-CLIENT_SECRETS_PATH = 'credentials/client_secrets.json'
+CLIENT_SECRETS_PATH = 'client_secrets.json'
 VIEW_ID = '157208265'
 
 
