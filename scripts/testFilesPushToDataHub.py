@@ -3,6 +3,7 @@ from urllib.error import HTTPError
 import re
 import time
 import pexpect
+import datetime
 
 
 def requestPageUntilProcessed(url):
@@ -25,6 +26,7 @@ def requestPageUntilProcessed(url):
 
 def getTimesOfProcessing():
     processingTimes = {}
+    print(str(datetime.datetime.now()))
     folderWithTestDataForPushing = 'test_push'
     for name in ['5kb-test', '1mb-test']:
         print('data push ' + folderWithTestDataForPushing + '/' + name + '.csv' + ' --published')
