@@ -17,7 +17,7 @@ def requestPageUntilProcessed(url):
             print('dataset has been succesfully processed. Time elapsed: ', processingTime)
             return processingTime
         except HTTPError:
-            print("dataset is getting processed. Time elapsed: ", round(time.time() - t0, 2))
+            # print("dataset is getting processed. Time elapsed: ", round(time.time() - t0, 2))
             time.sleep(2)
         if float(time.time() - t0) > 200:
             print('there was an error, dataset is taking too long to process, exiting ...')
@@ -33,8 +33,10 @@ def getTimesOfProcessing():
         child = pexpect.spawn('data push ' + folderWithTestDataForPushing + '/' + name + '.csv' + ' --published')
         child.expect('Please, confirm name for this dataset:')
         child.sendline(name)
+        print(name)
         child.expect("Please, confirm title for this dataset:")
         child.sendline(name)
+        print(name)
         byteOutput = child.read()
         outputString = byteOutput.decode("utf-8")
         print(outputString)
