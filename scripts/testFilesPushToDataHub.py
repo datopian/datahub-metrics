@@ -37,6 +37,7 @@ def getTimesOfProcessing():
         child.sendline(name)
         byteOutput = child.read()
         outputString = byteOutput.decode("utf-8")
+        print(outputString)
         regex = re.compile('https://datahub.io/Branko-Dj/' + name + '/v/[0-9]+')
         publishingLink = regex.findall(outputString)[0]
         print(publishingLink)
