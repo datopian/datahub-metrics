@@ -10,5 +10,6 @@ before_install:
 install:
     - pip install -r requirements.txt
     - npm install -g data-cli
+    - sudo apt install xsel
 script:
     - python scripts/dailyStats.py
