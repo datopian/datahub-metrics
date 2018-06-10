@@ -5,9 +5,8 @@ sudo: enabled
 python:
     - "3.6"
 before_install:
-    - openssl aes-256-cbc -K $encrypted_5d33e3994bfd_key -iv $encrypted_5d33e3994bfd_iv -in credentials/.env.enc -out credentials/.env -d
-    - openssl aes-256-cbc -K $encrypted_5d33e3994bfd_key -iv $encrypted_5d33e3994bfd_iv -in credentials/client_secrets.json.enc -out credentials/client_secrets.json -d
-    - openssl aes-256-cbc -K $encrypted_5d33e3994bfd_key -iv $encrypted_5d33e3994bfd_iv -in credentials/Gspread.json.enc -out credentials/Gspread.json -d
+    - openssl aes-256-cbc -K $encrypted_5d33e3994bfd_key -iv $encrypted_5d33e3994bfd_iv -in secrets.tar.enc -out secrets.tar -d
+    - tar xvf secrets.tar
 install:
     - pip install -r requirements.txt
 script:
