@@ -2,6 +2,6 @@ pexpect
 python-dotenv
 psycopg2
 httplib2
-apiclient
+google-api-python-client
 oauth2client
 gspread
