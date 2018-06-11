@@ -10,10 +10,12 @@ Once collected the stats are inserted into a google spreadsheet. The stats colle
 
 ## Requirements
 Scripts are written for python 3.6+. Modules that are required:
+
 - pexpect
+- python-dotenv
 - psycopg2
 - httplib2
-- apiclient
+- google-api-python-client
 - oauth2client
 - gspread
 
