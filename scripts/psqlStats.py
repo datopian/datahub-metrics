@@ -8,6 +8,7 @@ def setUpPsql():
     URI = envVariables.URI
     cursor = getConnectionCursorFromURI()
 
+
 def getConnectionCursorFromURI():
     result = urlparse(URI)
     username = result.username

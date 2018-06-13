@@ -3,7 +3,7 @@ import googleAnalytics
 import metastoreDataAPI
 import googleSpreadsheetUtils
 import testFilesPushToDataHub
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def getDailyStats(dailyStatsFieldsNameList):
@@ -11,7 +11,7 @@ def getDailyStats(dailyStatsFieldsNameList):
     for field in dailyStatsFieldsNameList:
         dailyStats[field] = ''
 
-    dailyStats['Date'] = datetime.now().strftime("%Y-%m-%d")
+    dailyStats['Date'] = (datetime.now() - timedelta(1)).strftime('%Y-%m-%d')
     dailyStats['Total Users'] = psqlStats.getCountOfTotalUsers()
     dailyStats['Total datasets'] = psqlStats.getCountOfAllDatasets()
     dailyStats['Private datasets'] = psqlStats.getCountOfPrivateDatasets()
@@ -39,21 +39,23 @@ def getDailyStats(dailyStatsFieldsNameList):
     return dailyStats
 
 
-dailyStatsFieldsNameList = [
-    'Date', 'Total Users', 'Total new users', 'Published datasets (metastore)',
-    'Published datasets (DB)', 'Unlisted datasets', 'Unlisted datasets (extracting our datasets)', 'Private datasets',
-    'Private datasets(extracting our datasets)', 'Total datasets', 'Number of pushes', 'Number of pushes (excluding us)',
-    'Speed of a 1Mb of packaged dataset push (in seconds)', 'Speed of a 5kb of packaged dataset push (in seconds)',
-    'Clicks on download link (csv + json + zip)', 'cli-macos', 'cli-linux', 'cli-windows',
-    'data-desktop', 'Total downloads', 'Download page (unique pageviews)', 'sign-in-pricing-page',
-    'sign-up-pricing-page', 'contact-us-pricing-page', 'Pricing page (unique pageviews)',
-    'Site Traffic', 'Data stored (Published)', 'Data growth', 'Total number of data requests', 'Comment'
-]
-dailyStatsWorksheet = googleSpreadsheetUtils.setUpStatsWorksheet(
-    # spreadsheetName="DataHub v3 Stats & Metrics",
-    spreadsheetName="Stats Test",
-    worksheetName="Daily Stats",
-    fieldNamesList=dailyStatsFieldsNameList
-)
-dailyStats = getDailyStats(dailyStatsFieldsNameList)
-googleSpreadsheetUtils.updateWorksheetAfterLastRow(dailyStatsWorksheet, dailyStats)
+def main(stageSpreadsheetName):
+    print('running daily stats')
+    dailyStatsFieldsNameList = [
+        'Date', 'Total Users', 'Total new users', 'Published datasets (metastore)',
+        'Published datasets (DB)', 'Unlisted datasets', 'Unlisted datasets (extracting our datasets)', 'Private datasets',
+        'Private datasets(extracting our datasets)', 'Total datasets', 'Number of pushes', 'Number of pushes (excluding us)',
+        'Speed of a 1Mb of packaged dataset push (in seconds)', 'Speed of a 5kb of packaged dataset push (in seconds)',
+        'Clicks on download link (csv + json + zip)', 'cli-macos', 'cli-linux', 'cli-windows',
+        'data-desktop', 'Total downloads', 'Download page (unique pageviews)', 'sign-in-pricing-page',
+        'sign-up-pricing-page', 'contact-us-pricing-page', 'Pricing page (unique pageviews)',
+        'Site Traffic', 'Data stored (Published)', 'Data growth', 'Total number of data requests', 'Comment'
+    ]
+
+    dailyStatsWorksheet = googleSpreadsheetUtils.setUpStatsWorksheet(
+        spreadsheetName=stageSpreadsheetName,
+        worksheetName="Daily Stats",
+        fieldNamesList=dailyStatsFieldsNameList
+    )
+    dailyStats = getDailyStats(dailyStatsFieldsNameList)
+    googleSpreadsheetUtils.updateWorksheetAfterLastRow(dailyStatsWorksheet, dailyStats)

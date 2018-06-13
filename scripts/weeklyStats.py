@@ -14,7 +14,10 @@ def getWeeklyStats():
 
     weeklyStats = {}
     weeklyStats['Date'] = currentWeekMondayDate.strftime("%Y-%m-%d")
-    weeklyStats['Number of members on datahubio chat on gitter (every monday)'] = gitterAPI.getCountOfUsersInDatahubChatRoom()
+    try:
+        weeklyStats['Number of members on datahubio chat on gitter (every monday)'] = gitterAPI.getCountOfUsersInDatahubChatRoom()
+    except:
+        weeklyStats['Number of members on datahubio chat on gitter (every monday)'] = 'ERROR - check authentication'
     weeklyStatsFromGoogleAnalytics = googleAnalytics.getStats('weekly', mondayPreviousWeekDate, sundayPreviousWeekDate)
     weeklyStats = {**weeklyStats, **weeklyStatsFromGoogleAnalytics}
     return weeklyStats
@@ -26,15 +29,17 @@ def getCurrentWeekMondayDate():
     return currentWeekMondayDate
 
 
-weeklyStatsFieldNamesList = [
-        'Date', 'Number of members on datahubio chat on gitter (every monday)',
-        'Site traffic weekly (measured every monday for the last week)',
-        'Total number of data requests per week'
+def main(stageSpreadsheetName):
+    print('running weekly stats')
+    weeklyStatsFieldNamesList = [
+            'Date', 'Number of members on datahubio chat on gitter (every monday)',
+            'Site traffic weekly (measured every monday for the last week)',
+            'Total number of data requests per week'
     ]
-weeklyStatsWorksheet = googleSpreadsheetUtils.setUpStatsWorksheet(
-    spreadsheetName="Stats Test",
-    worksheetName="Weekly Stats",
-    fieldNamesList=weeklyStatsFieldNamesList
-)
-weeklyStats = getWeeklyStats()
-googleSpreadsheetUtils.updateWorksheetAfterLastRow(weeklyStatsWorksheet, weeklyStats)
+    weeklyStatsWorksheet = googleSpreadsheetUtils.setUpStatsWorksheet(
+        spreadsheetName=stageSpreadsheetName,
+        worksheetName="Weekly Stats",
+        fieldNamesList=weeklyStatsFieldNamesList
+    )
+    weeklyStats = getWeeklyStats()
+    googleSpreadsheetUtils.updateWorksheetAfterLastRow(weeklyStatsWorksheet, weeklyStats)
