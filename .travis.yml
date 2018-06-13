@@ -1,5 +1,5 @@
 os: linux
-
+dist: trusty
 language: python
 sudo: enabled
 python:
@@ -12,4 +12,4 @@ install:
     - npm install -g data-cli
     - sudo apt install xsel
 script:
-    - python scripts/dailyStats.py
+    - python scripts/runStatsCollection.py test
