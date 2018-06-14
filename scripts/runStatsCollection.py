@@ -29,7 +29,7 @@ spreadsheetName = "Stats Test" if stage == 'test' else "DataHub v3 Stats & Metri
 print('stage = ', stage)
 print(spreadsheetName)
 currentDate = datetime.date.today()
-print(currentDate.strftime("%Y-%m-%d"))
+print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 if isBetweenTuesdayAndSaturday(currentDate):
     dailyStats.main(spreadsheetName)
     if isSprintThursday(currentDate):
