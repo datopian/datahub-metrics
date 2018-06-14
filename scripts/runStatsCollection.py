@@ -25,13 +25,17 @@ def isSprintThursday(currentDate):
 
 
 stage = sys.argv[1] if len(sys.argv) == 2 else ''
-spreadsheetName = "Stats Test" if stage == 'test' else "DataHub v3 Stats & Metrics"
+stageSpreadsheetNameDictionary = {
+    'test': 'Stats Test',
+    'production': 'DataHub v3 Stats & Metrics'
+}
+spreadsheetName = stageSpreadsheetNameDictionary[stage]
 print('stage = ', stage)
 print(spreadsheetName)
 currentDate = datetime.date.today()
 print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 if isBetweenTuesdayAndSaturday(currentDate):
-    # dailyStats.main(spreadsheetName)
+    dailyStats.main(spreadsheetName)
     if isSprintThursday(currentDate):
         biWeeklyStats.main(spreadsheetName)
 elif isMonday(currentDate):
