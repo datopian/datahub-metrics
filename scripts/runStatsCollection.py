@@ -31,7 +31,7 @@ print(spreadsheetName)
 currentDate = datetime.date.today()
 print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 if isBetweenTuesdayAndSaturday(currentDate):
-    dailyStats.main(spreadsheetName)
+    # dailyStats.main(spreadsheetName)
     if isSprintThursday(currentDate):
         biWeeklyStats.main(spreadsheetName)
 elif isMonday(currentDate):
