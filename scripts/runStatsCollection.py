@@ -16,7 +16,7 @@ def isMonday(currentDate):
 def isSprintThursday(currentDate):
     with open("archive/last_sprint_date.txt", 'r') as f:
         lastSprintDate = datetime.datetime.strptime(f.read(), "%Y-%m-%d").date()
-    if (currentDate - lastSprintDate).days == 14:
+    if (currentDate - lastSprintDate).days % 14 == 0:
         with open("archive/last_sprint_date.txt", 'w') as w:
             w.write(currentDate.strftime("%Y-%m-%d"))
         return True
