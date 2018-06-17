@@ -1,0 +1,410 @@
+{
+  "name": "datahub-metrics",
+  "title": "Datahub metrics",
+  "resources": [
+    {
+      "path": "biweekly_stats.csv",
+      "pathType": "local",
+      "name": "biweekly_stats",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "ISO-8859-1",
+      "dialect": {
+        "delimiter": ",",
+        "quoteChar": "\""
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "Date",
+            "type": "date",
+            "format": "default"
+          },
+          {
+            "name": "Total Users",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "Total new users",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Downloads CLI (npm)",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Downloads CLI (GA)",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "cli-windows",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "cli-linux",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "cli-macos",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Number of (new = last 2w) users who publishes any dataset",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "How many of these push more than one dataset?",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Number of first runs of `data`",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "help",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "noArgs",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "validate",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "push",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "get",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "cat",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "info",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "init",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "login",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Site traffic (daily average)",
+            "type": "number",
+            "format": "default"
+          },
+          {
+            "name": "Total published (public) datasets",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Total number of new datasets in last 2w",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Number of pushes (daily average)",
+            "type": "number",
+            "format": "default"
+          },
+          {
+            "name": "Number of members on datahubio chat on gitter",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Number of data requests (daily average)",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "Number of unique visits",
+            "type": "integer",
+            "format": "default"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "path": "daily_stats.csv",
+      "pathType": "local",
+      "name": "daily_stats",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "ISO-8859-1",
+      "dialect": {
+        "delimiter": ",",
+        "quoteChar": "\""
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "Date",
+            "type": "date",
+            "format": "default"
+          },
+          {
+            "name": "Total Users",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Total new users",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Published datasets (metastore)",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Published datasets (DB)",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Unlisted datasets",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Unlisted datasets (extracting our datasets)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Private datasets",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Private datasets(extracting our datasets)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Total datasets",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Number of pushes",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Number of pushes (excluding us)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Speed of a 1Mb of packaged dataset push (in seconds)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Speed of a 5kb of packaged dataset push (in seconds)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Clicks on download link (csv + json + zip)",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "cli-macos",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "cli-linux",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "cli-windows",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "data-desktop",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Total downloads",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Download page (unique pageviews)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "sign-in-pricing-page",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "sign-up-pricing-page",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "contact-us-pricing-page",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Pricing page (unique pageviews)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Site Traffic",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Data stored (Published)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Data growth",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Total number of data requests",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Comment",
+            "type": "string",
+            "format": "default"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "path": "weekly_stats.csv",
+      "pathType": "local",
+      "name": "weekly_stats",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "ISO-8859-1",
+      "dialect": {
+        "delimiter": ",",
+        "quoteChar": "\""
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "Date",
+            "type": "date",
+            "format": "default"
+          },
+          {
+            "name": "Site traffic weekly (measured every monday for the last week)",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "Number of members on datahubio chat on gitter (every monday)",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "Total number of data requests per week",
+            "type": "string",
+            "format": "default"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ],
+  "views": [
+      {
+          "name": "Total Users",
+          "resources": ["biweekly_stats"],
+          "spec": {
+              "group": "Date",
+              "series": ["Total Users"],
+              "type": "line"
+          },
+          "specType": "simple",
+          "title": "Total users counted on the day of latest sprint"
+      },
+      {
+          "name": "Site Traffic",
+          "resources": ["daily_stats"],
+          "spec": {
+              "group": "Date",
+              "series": ["Site Traffic"],
+              "type": "line"
+          },
+          "specType": "simple",
+          "title": "Site traffic by day"
+      },
+      {
+          "name": "Total datasets",
+          "resources": ["daily_stats"],
+          "spec": {
+              "group": "Date",
+              "series": ["Total datasets", "Published datasets (DB)", "Unlisted datasets", "Private datasets"],
+              "type": "line"
+          },
+          "specType": "simple",
+          "title": "Number of datasets every day"
+      }
+  ],
+  "licenses": [
+    {
+      "name": "ODC-PDDL",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License"
+    }
+  ]
+}
