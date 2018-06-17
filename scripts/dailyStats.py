@@ -59,3 +59,4 @@ def main(stageSpreadsheetName):
     )
     dailyStats = getDailyStats(dailyStatsFieldsNameList)
     googleSpreadsheetUtils.updateWorksheetAfterLastRow(dailyStatsWorksheet, dailyStats)
+    googleSpreadsheetUtils.downloadWorksheetAsCsvFile(dailyStatsWorksheet, 'daily_stats.csv')

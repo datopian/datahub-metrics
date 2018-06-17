@@ -66,3 +66,4 @@ def main(stageSpreadsheetName):
     )
     biWeeklyStats = getBiWeeklyStats(biWeeklyStatsFieldsNameList)
     googleSpreadsheetUtils.updateWorksheetAfterLastRow(biWeeklyStatsWorksheet, biWeeklyStats)
+    googleSpreadsheetUtils.downloadWorksheetAsCsvFile(biWeeklyStatsWorksheet, 'biweekly_stats.csv')

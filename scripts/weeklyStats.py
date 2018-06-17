@@ -43,3 +43,4 @@ def main(stageSpreadsheetName):
     )
     weeklyStats = getWeeklyStats()
     googleSpreadsheetUtils.updateWorksheetAfterLastRow(weeklyStatsWorksheet, weeklyStats)
+    googleSpreadsheetUtils.downloadWorksheetAsCsvFile(weeklyStatsWorksheet, 'weekly_stats.csv')

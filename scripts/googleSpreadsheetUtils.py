@@ -1,6 +1,7 @@
 from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import sys
+import csv
 
 
 def setUpStatsWorksheet(spreadsheetName, worksheetName, fieldNamesList):
@@ -68,3 +69,10 @@ def checkFieldAndColumnNamesMatch(worksheet, fieldNamesList):
         print('Column names do not match those in script. Please recheck script')
         print(fieldNamesNotInSpreadsheet, columnNamesNotInFieldNames)
         return False
+
+
+def downloadWorksheetAsCsvFile(worksheetObject, csvFileName):
+    with open(csvFileName, 'w') as f:
+        writer = csv.writer(f)
+        worksheetRows = worksheetObject.get_all_values()
+        writer.writerows([worksheetRows[0]] + worksheetRows[3:])
