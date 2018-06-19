@@ -13,4 +13,3 @@ install:
     - sudo apt install xsel
 script:
     - python scripts/runStatsCollection.py production
-    - data push
