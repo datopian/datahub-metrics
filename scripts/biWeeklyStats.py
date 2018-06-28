@@ -31,6 +31,7 @@ def getBiWeeklyStats(biWeeklyStatsFieldsNameList):
         biWeeklyStats[field] = biWeeklyGoogleAnalyticsStats[field]
         if field in ['Number of pushes (daily average)', 'Number of data requests (daily average)', 'Site traffic (daily average)']:
             biWeeklyStats[field] = round(int(biWeeklyStats[field])/14, 2)
+    biWeeklyStats['Total Unique Visitors'] = biWeeklyGoogleAnalyticsStats['Site traffic (daily average)']
     return biWeeklyStats
 
 
@@ -49,7 +50,7 @@ def getNumberOfCliDownloadsNPM(startDate, endDate):
 def main(stageSpreadsheetName):
     print('running biweekly stats')
     biWeeklyStatsFieldsNameList = [
-        'Date', 'Total Users', 'Total new users', 'Downloads CLI (npm)',
+        'Date', 'Total Unique Visitors', 'Total Users', 'Total new users', 'Downloads CLI (npm)',
         'Downloads CLI (GA)', 'cli-windows', 'cli-linux', 'cli-macos',
         'Number of (new = last 2w) users who publishes any dataset',
         'How many of these push more than one dataset?', 'Number of first runs of `data`',
