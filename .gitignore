@@ -1,0 +1,9 @@
+analyticsreporting.dat
+testing/
+client_secrets.json
+.ipynb_checkpoints/
+.cache/
+secrets.tar
+.env
+Gspread.json
+
