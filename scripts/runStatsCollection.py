@@ -40,3 +40,4 @@ if isBetweenTuesdayAndSaturday(currentDate):
         biWeeklyStats.main(spreadsheetName)
 elif isMonday(currentDate):
     weeklyStats.main(spreadsheetName)
+
