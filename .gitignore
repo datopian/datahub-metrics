@@ -6,4 +6,4 @@ client_secrets.json
 secrets.tar
 .env
 Gspread.json
-
+scripts/__pycache__/
