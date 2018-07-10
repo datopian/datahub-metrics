@@ -1,8 +1,8 @@
-Date,Total Users,Total new users,Downloads CLI (npm),Downloads CLI (GA),cli-windows,cli-linux,cli-macos,Number of (new = last 2w) users who publishes any dataset,How many of these push more than one dataset?,Number of first runs of `data`,help,noArgs,validate,push,get,cat,info,init,login,Site traffic (daily average),Total published (public) datasets,Total number of new datasets in last 2w,Number of pushes (daily average),Number of members on datahubio chat on gitter,Number of data requests (daily average),Number of unique visits
-2018-04-05,694,66,276,157,122,18,17,6,2,27,56,,5,31,23,3,11,11,3,1140.6,324,11,3.43,92,1.6,12780
-2018-04-19,787,93,369,126,93,19,14,11,10,37,69,,30,69,46,25,17,26,44,939.7,338,71,4.93,97,,12614
-2018-05-03,870,83,355,161,110,26,15,5,2,17,9,,11,61,30,0,3,6,2,896.6,344,36,4.36,98,,11846
-2018-05-17,951,81,113,105,61,26,12,6,3,20,9,,9,111,14,3,8,14,4,856.9,356,37,7.93,102,1.93,11421
-2018-05-31,1032,81,75,48,34,7,10,1,1,13,7,47,10,46,7,10,15,2,2,811,371,5,3.28,104,0.21,10768
-2018-06-14,1129,97,121,51,28,22,7,2,1,22,1,45,4,175,304,0,6,2,3,918.64,397,25,7.07,107,0.5,12423
-2018-06-28,1221,92,98,54,36,17,7,5,3,33,8,113,16,125,8,2,7,5,0,1003.36,772,434,3.71,109,0.57,13475
+Date,Total Unique Visitors,Total Users,Total new users,Downloads CLI (npm),Downloads CLI (GA),cli-windows,cli-linux,cli-macos,Number of (new = last 2w) users who publishes any dataset,How many of these push more than one dataset?,Number of first runs of 'data',help,noArgs,validate,push,get,cat,info,init,login,Site traffic (daily average),Total published (public) datasets,Total number of new datasets in last 2w,Number of pushes (daily average),Number of members on datahubio chat on gitter,Number of data requests (daily average),Number of unique visits
+2018-04-05,15968,694,66,276,157,122,18,17,6,2,27,56,,5,31,23,3,11,11,3,1140.6,324,11,3.43,92,1.6,12780
+2018-04-19,13156,787,93,369,126,93,19,14,11,10,37,69,,30,69,46,25,17,26,44,939.7,338,71,4.93,97,,12614
+2018-05-03,12552,870,83,355,161,110,26,15,5,2,17,9,,11,61,30,0,3,6,2,896.6,344,36,4.36,98,,11846
+2018-05-17,11997,951,81,113,105,61,26,12,6,3,20,9,,9,111,14,3,8,14,4,856.9,356,37,7.93,102,1.93,11421
+2018-05-31,11354,1032,81,75,48,34,7,10,1,1,13,7,47,10,46,7,10,15,2,2,811,371,5,3.28,104,0.21,10768
+2018-06-14,12861,1129,97,121,51,28,22,7,2,1,22,1,45,4,175,304,0,6,2,3,918.64,397,25,7.07,107,0.5,12423
+2018-06-28,14047,1221,92,98,54,36,17,7,5,3,33,8,113,16,125,8,2,7,5,0,1003.36,772,434,3.71,109,0.57,13475

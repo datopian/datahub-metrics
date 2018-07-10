@@ -17,7 +17,7 @@ statsFields = {
     },
     'biweekly': {
         'Downloads CLI (GA)', 'cli-windows', 'cli-linux', 'cli-macos',
-        'Number of first runs of `data`', 'help', 'noArgs', 'validate', 'push',
+        'number of first runs of \'data\'', 'help', 'noArgs', 'validate', 'push',
         'get', 'cat', 'info', 'init', 'login', 'Site traffic (daily average)',
         'Number of pushes (daily average)', 'Number of data requests (daily average)',
         'Number of unique visits'
@@ -53,7 +53,7 @@ statsMetrics = {
         'cli-windows': [{'expression': 'ga:totalEvents'}],
         'cli-linux': [{'expression': 'ga:totalEvents'}],
         'cli-macos': [{'expression': 'ga:totalEvents'}],
-        'Number of first runs of `data`': cliActionMetrics,
+        'number of first runs of \'data\'': cliActionMetrics,
         'help': cliActionMetrics,
         'noArgs': cliActionMetrics,
         'validate': cliActionMetrics,
@@ -153,7 +153,7 @@ biWeeklyStatsFilters = {
     'cli-windows': dailyStatsFilters['cli-windows'],
     'cli-linux': dailyStatsFilters['cli-linux'],
     'cli-macos': dailyStatsFilters['cli-macos'],
-    'Number of first runs of `data`': [
+    'number of first runs of \'data\'': [
         {'filters': [{'dimensionName': 'ga:eventCategory', 'expressions': 'cli'}]},
         {'filters': [{'dimensionName': 'ga:eventAction', 'expressions': 'first-run'}]},
     ],

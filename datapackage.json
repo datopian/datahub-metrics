@@ -21,6 +21,11 @@
             "format": "default"
           },
           {
+            "name": "Total Unique Visitors",
+            "type": "integer",
+            "format": "default"
+          },
+          {
             "name": "Total Users",
             "type": "any",
             "format": "default"
@@ -66,7 +71,7 @@
             "format": "default"
           },
           {
-            "name": "Number of first runs of `data`",
+            "name": "Number of first runs of 'data'",
             "type": "integer",
             "format": "default"
           },
@@ -367,37 +372,36 @@
   ],
   "views": [
       {
-          "name": "Total New Users",
-          "resources": ["biweekly_stats"],
+          "name": "funnels",
+          "resources": [
+            {
+              "name": "biweekly_stats",
+              "transform": [
+                {
+                  "type": "formula",
+                  "expressions": [
+                    "data['Total new users'] * 100 / data['Total Unique Visitors']",
+                    "data['Downloads CLI (GA)'] * 100 / data['Total Unique Visitors']"
+                  ],
+                  "asFields": [
+                    "Percentage of total new users in the sprint",
+                    "Percentage of total CLI downloads from website in the sprint"
+                  ]
+                }
+              ]
+            }
+          ],
           "spec": {
               "group": "Date",
-              "series": ["Total new users"],
-              "type": "line"
+              "series": [
+                "Percentage of total new users in the sprint",
+                "Percentage of total CLI downloads from website in the sprint"
+              ],
+              "type": "line",
+              "ySuffix": "%"
           },
           "specType": "simple",
-          "title": "Total new users per sprint"
-      },
-      {
-        "name": "cli-downloads",
-        "title": "Downloads of the CLI tool per sprint",
-        "resources": ["biweekly_stats"],
-        "specType": "simple",
-        "spec": {
-          "group": "Date",
-          "type": "line",
-          "series": ["Downloads CLI (GA)", "cli-windows", "cli-linux", "cli-macos"]
-        }
-      },
-      {
-          "name": "datasets-by-findability",
-          "resources": ["daily_stats"],
-          "spec": {
-              "group": "Date",
-              "series": ["Published datasets (metastore)", "Unlisted datasets (extracting our datasets)", "Private datasets(extracting our datasets)"],
-              "type": "line"
-          },
-          "specType": "simple",
-          "title": "Total number of datasets by findability"
+          "title": "Funnels"
       }
   ],
   "licenses": [
