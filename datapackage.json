@@ -367,37 +367,37 @@
   ],
   "views": [
       {
-          "name": "Total Users",
+          "name": "Total New Users",
           "resources": ["biweekly_stats"],
           "spec": {
               "group": "Date",
-              "series": ["Total Users"],
+              "series": ["Total new users"],
               "type": "line"
           },
           "specType": "simple",
-          "title": "Total users counted on the day of latest sprint"
+          "title": "Total new users per sprint"
       },
       {
-          "name": "Site Traffic",
+        "name": "cli-downloads",
+        "title": "Downloads of the CLI tool per sprint",
+        "resources": ["biweekly_stats"],
+        "specType": "simple",
+        "spec": {
+          "group": "Date",
+          "type": "line",
+          "series": ["Downloads CLI (GA)", "cli-windows", "cli-linux", "cli-macos"]
+        }
+      },
+      {
+          "name": "datasets-by-findability",
           "resources": ["daily_stats"],
           "spec": {
               "group": "Date",
-              "series": ["Site Traffic"],
+              "series": ["Published datasets (metastore)", "Unlisted datasets (extracting our datasets)", "Private datasets(extracting our datasets)"],
               "type": "line"
           },
           "specType": "simple",
-          "title": "Site traffic by day"
-      },
-      {
-          "name": "Total datasets",
-          "resources": ["daily_stats"],
-          "spec": {
-              "group": "Date",
-              "series": ["Total datasets", "Published datasets (DB)", "Unlisted datasets", "Private datasets"],
-              "type": "line"
-          },
-          "specType": "simple",
-          "title": "Number of datasets every day"
+          "title": "Total number of datasets by findability"
       }
   ],
   "licenses": [
