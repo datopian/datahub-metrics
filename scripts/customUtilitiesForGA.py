@@ -17,7 +17,7 @@ statsFields = {
     },
     'biweekly': {
         'Downloads CLI (GA)', 'cli-windows', 'cli-linux', 'cli-macos',
-        'number of first runs of \'data\'', 'help', 'noArgs', 'validate', 'push',
+        "number of first runs of 'data'", 'help', 'noArgs', 'validate', 'push',
         'get', 'cat', 'info', 'init', 'login', 'Site traffic (daily average)',
         'Number of pushes (daily average)', 'Number of data requests (daily average)',
         'Number of unique visits'
@@ -53,7 +53,7 @@ statsMetrics = {
         'cli-windows': [{'expression': 'ga:totalEvents'}],
         'cli-linux': [{'expression': 'ga:totalEvents'}],
         'cli-macos': [{'expression': 'ga:totalEvents'}],
-        'number of first runs of \'data\'': cliActionMetrics,
+        "number of first runs of 'data'": cliActionMetrics,
         'help': cliActionMetrics,
         'noArgs': cliActionMetrics,
         'validate': cliActionMetrics,
