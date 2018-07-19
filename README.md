@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/datahq/datahub-metrics.svg?branch=master)](https://travis-ci.org/datahq/datahub-metrics)
+
 # DataHub Metrics
 
 This repo automates daily, weekly and biweekly stats collection for datahub.io. Stats are collected from postgre sql database, metastore api sevice, google analytics and gitter. The script also uploads test csv files via [data-cli](https://github.com/datahq/data-cli) to measure data processing time on website on a daily basis
