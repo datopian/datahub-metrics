@@ -24,7 +24,7 @@ def isSprintThursday(currentDate):
         return False
 
 
-stage = sys.argv[1] if len(sys.argv) == 2 else ''
+stage = sys.argv[1] if len(sys.argv) == 2 else 'production'
 stageSpreadsheetNameDictionary = {
     'test': 'Stats Test',
     'production': 'DataHub v3 Stats & Metrics'
@@ -40,4 +40,3 @@ if isBetweenTuesdayAndSaturday(currentDate):
         biWeeklyStats.main(spreadsheetName)
 elif isMonday(currentDate):
     weeklyStats.main(spreadsheetName)
-

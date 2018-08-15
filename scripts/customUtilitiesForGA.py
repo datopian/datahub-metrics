@@ -9,18 +9,16 @@ statsFields = {
         'Clicks on download link (csv + json + zip)', 'cli-macos', 'cli-linux',
         'cli-windows', 'data-desktop', 'Download page (unique pageviews)',
         'sign-in-pricing-page', 'sign-up-pricing-page', 'contact-us-pricing-page',
-        'Pricing page (unique pageviews)', 'Site Traffic', 'Total number of data requests'
+        'Pricing page (unique pageviews)', 'Site Traffic'
     },
     'weekly': {
-        'Site traffic weekly (measured every monday for the last week)',
-        'Total number of data requests per week'
+        'Site traffic weekly (measured every monday for the last week)'
     },
     'biweekly': {
         'Downloads CLI (GA)', 'cli-windows', 'cli-linux', 'cli-macos',
-        "number of first runs of 'data'", 'help', 'noArgs', 'validate', 'push',
+        "number of first runs of `data`", 'help', 'noArgs', 'validate', 'push',
         'get', 'cat', 'info', 'init', 'login', 'Site traffic (daily average)',
-        'Number of pushes (daily average)', 'Number of data requests (daily average)',
-        'Number of unique visits'
+        'Number of pushes (daily average)', 'Number of unique visits'
     }
 }
 
@@ -53,7 +51,7 @@ statsMetrics = {
         'cli-windows': [{'expression': 'ga:totalEvents'}],
         'cli-linux': [{'expression': 'ga:totalEvents'}],
         'cli-macos': [{'expression': 'ga:totalEvents'}],
-        "number of first runs of 'data'": cliActionMetrics,
+        "number of first runs of `data`": cliActionMetrics,
         'help': cliActionMetrics,
         'noArgs': cliActionMetrics,
         'validate': cliActionMetrics,
@@ -153,7 +151,7 @@ biWeeklyStatsFilters = {
     'cli-windows': dailyStatsFilters['cli-windows'],
     'cli-linux': dailyStatsFilters['cli-linux'],
     'cli-macos': dailyStatsFilters['cli-macos'],
-    'number of first runs of \'data\'': [
+    'number of first runs of `data`': [
         {'filters': [{'dimensionName': 'ga:eventCategory', 'expressions': 'cli'}]},
         {'filters': [{'dimensionName': 'ga:eventAction', 'expressions': 'first-run'}]},
     ],
