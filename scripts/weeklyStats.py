@@ -5,6 +5,7 @@ import gitterAPI
 import googleSpreadsheetUtils
 import datetime
 import googleAnalytics
+from dataRequests import getNumberOfDataRequestsForPreviousWeek
 
 
 def getWeeklyStats():
@@ -18,6 +19,7 @@ def getWeeklyStats():
         weeklyStats['Number of members on datahubio chat on gitter (every monday)'] = gitterAPI.getCountOfUsersInDatahubChatRoom()
     except:
         weeklyStats['Number of members on datahubio chat on gitter (every monday)'] = 'ERROR - check authentication'
+    weeklyStats['Total number of data requests per week'] = str(getNumberOfDataRequestsForPreviousWeek(currentWeekMondayDate))
     weeklyStatsFromGoogleAnalytics = googleAnalytics.getStats('weekly', mondayPreviousWeekDate, sundayPreviousWeekDate)
     weeklyStats = {**weeklyStats, **weeklyStatsFromGoogleAnalytics}
     return weeklyStats

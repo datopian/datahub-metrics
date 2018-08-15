@@ -3,6 +3,7 @@ import googleAnalytics
 import metastoreDataAPI
 import googleSpreadsheetUtils
 import testFilesPushToDataHub
+from dataRequests import getNumberOfDataRequestsForGivenDate
 from datetime import datetime, timedelta
 
 
@@ -23,9 +24,15 @@ def getDailyStats(dailyStatsFieldsNameList):
     dailyStats['Unlisted datasets (extracting our datasets)'] = dailyStats['Unlisted datasets'] - psqlStats.getCountOfUnlistedDatasets()
     dailyStats['Number of pushes'] = psqlStats.getCountOfAllPushRequests(dailyStats['Date'])
     dailyStats['Number of pushes (excluding us)'] = psqlStats.getCountOfPushRequestsExcludingUs(dailyStats['Date'])
-    timesOfProcessing = testFilesPushToDataHub.getTimesOfProcessing()
-    dailyStats['Speed of a 5kb of packaged dataset push (in seconds)'] = timesOfProcessing['5kb-test']
-    dailyStats['Speed of a 1Mb of packaged dataset push (in seconds)'] = timesOfProcessing['1mb-test']
+    dailyStats['Total number of data requests'] = str(getNumberOfDataRequestsForGivenDate(dailyStats['Date']))
+    try:
+        timesOfProcessing = testFilesPushToDataHub.getTimesOfProcessing()
+        dailyStats['Speed of a 5kb of packaged dataset push (in seconds)'] = timesOfProcessing['5kb-test']
+        dailyStats['Speed of a 1Mb of packaged dataset push (in seconds)'] = timesOfProcessing['1mb-test']
+    except:
+        print('\nThere was an error in test dataset pushing!')
+        dailyStats['Speed of a 5kb of packaged dataset push (in seconds)'] = 'ERROR!'
+        dailyStats['Speed of a 1Mb of packaged dataset push (in seconds)'] = 'ERROR!'
 
     dailyGoogleAnalyticsStats = googleAnalytics.getStats('daily', dailyStats['Date'])
     for field in dailyGoogleAnalyticsStats:
