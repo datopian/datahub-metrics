@@ -31,7 +31,7 @@ def getNumberOfDataRequestsForGivenDate(date):
 dataRequestsWorksheet = googleSpreadsheetUtils.setUpStatsWorksheet(
     spreadsheetName="Data Request Form (Responses from 2018-07-03)",
     worksheetName="Form Responses 1",
-    fieldNamesList=["Timestamp", "Name", "Email", "Dataset category", "I want ...", "In order to ..."]
+    fieldNamesList=["Timestamp", "Name", "Email", "Dataset category", "I want ...", "In order to ...", "Type of your organization"]
 )
 
 dates = getAllDatesFromWorksheet()
