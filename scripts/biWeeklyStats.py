@@ -55,7 +55,7 @@ def main(stageSpreadsheetName):
         'Date', 'Total Unique Visitors', 'Total Users', 'Total new users', 'Downloads CLI (npm)',
         'Downloads CLI (GA)', 'cli-windows', 'cli-linux', 'cli-macos',
         'Number of (new = last 2w) users who publishes any dataset',
-        'How many of these push more than one dataset?', "Number of first runs of `data`",
+        'How many of these push more than one dataset?', "number of first runs of `data`",
         'help', 'noArgs', 'validate', 'push', 'get', 'cat', 'info', 'init',
         'login', 'Site traffic (daily average)', 'Total published (public) datasets',
         'Total number of new datasets in last 2w', 'Number of pushes (daily average)',
