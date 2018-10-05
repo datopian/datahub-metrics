@@ -3,6 +3,9 @@ import gspread
 import sys
 import csv
 
+class FieldNamesMismatchException(Exception):
+    pass
+
 
 def setUpStatsWorksheet(spreadsheetName, worksheetName, fieldNamesList):
     statsSpreadsheetObject = openSpreadsheet(spreadsheetName)
@@ -11,7 +14,7 @@ def setUpStatsWorksheet(spreadsheetName, worksheetName, fieldNamesList):
         worksheet=statsWorksheetObject,
         fieldNamesList=fieldNamesList
     ):
-        sys.exit()
+        raise FieldNamesMismatchException('Field names mismatch!')
     return statsWorksheetObject
 
 
@@ -66,8 +69,11 @@ def checkFieldAndColumnNamesMatch(worksheet, fieldNamesList):
     else:
         fieldNamesNotInSpreadsheet = [x for x in fieldNamesList if x not in columnNamesList]
         columnNamesNotInFieldNames = [x for x in columnNamesList if x not in fieldNamesList]
-        print('Column names do not match those in script. Please recheck script')
-        print(fieldNamesNotInSpreadsheet, columnNamesNotInFieldNames)
+        print('Column names in spreadsheet do not match those in script. Please recheck script and spreadsheet')
+        print({
+            'script field names not in spreadsheet': fieldNamesNotInSpreadsheet,
+            'spreadsheet columns not in script field names': columnNamesNotInFieldNames
+        })
         return False
 
 
