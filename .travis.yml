@@ -10,7 +10,7 @@ before_install:
 install:
     - pip install -r requirements.txt
     - npm install -g data-cli
-    - apt-get update
+    - sudo apt-get update
     - sudo apt install xsel
 script:
     - python scripts/runStatsCollection.py production
